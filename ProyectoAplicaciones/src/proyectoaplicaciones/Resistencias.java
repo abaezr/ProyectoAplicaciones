@@ -241,8 +241,7 @@ public class Resistencias extends javax.swing.JFrame {
             this.labelBanda1.setBackground(Color.gray);
         if(jComboBoxBanda1.getSelectedIndex()==10)
             this.labelBanda1.setBackground(Color.white);
-        else
-             this.labelBanda1.setBackground(Color.white);
+        
         
     }//GEN-LAST:event_jComboBoxBanda1ActionPerformed
 
@@ -314,8 +313,7 @@ public class Resistencias extends javax.swing.JFrame {
             this.labelTolerancia.setBackground(cafe);
         if(jComboBoxTolerancia.getSelectedIndex()==4)
             this.labelTolerancia.setBackground(Color.red);
-        else
-            this.labelTolerancia.setBackground(Color.white);
+        
     }//GEN-LAST:event_jComboBoxToleranciaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
