@@ -30,9 +30,7 @@ public class Resistencias extends javax.swing.JFrame {
         this.labelMultiplicador.setOpaque(true);
         this.labelMultiplicador.setBackground(Color.white);
         this.labelTolerancia.setOpaque(true);
-        this.labelTolerancia.setBackground(Color.white);
-        
-       
+        this.labelTolerancia.setBackground(Color.white);      
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -243,6 +241,8 @@ public class Resistencias extends javax.swing.JFrame {
             this.labelBanda1.setBackground(Color.gray);
         if(jComboBoxBanda1.getSelectedIndex()==10)
             this.labelBanda1.setBackground(Color.white);
+        else
+             this.labelBanda1.setBackground(Color.white);
         
     }//GEN-LAST:event_jComboBoxBanda1ActionPerformed
 
