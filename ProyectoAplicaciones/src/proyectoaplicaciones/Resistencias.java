@@ -31,9 +31,10 @@ public class Resistencias extends javax.swing.JFrame {
         this.labelMultiplicador.setBackground(Color.white);
         this.labelTolerancia.setOpaque(true);
         this.labelTolerancia.setBackground(Color.white);
+        
+       
     }
 
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -313,7 +314,8 @@ public class Resistencias extends javax.swing.JFrame {
             this.labelTolerancia.setBackground(cafe);
         if(jComboBoxTolerancia.getSelectedIndex()==4)
             this.labelTolerancia.setBackground(Color.red);
-        
+        else
+            this.labelTolerancia.setBackground(Color.white);
     }//GEN-LAST:event_jComboBoxToleranciaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
