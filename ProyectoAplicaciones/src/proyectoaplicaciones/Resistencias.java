@@ -22,7 +22,7 @@ public class Resistencias extends javax.swing.JFrame {
     public Resistencias() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(Fondo);
+        this.getContentPane().setBackground(Fondo);//Color de Fondo
         this.labelBanda1.setOpaque(true);
         this.labelBanda1.setBackground(Color.white);
         this.labelBanda2.setOpaque(true);
