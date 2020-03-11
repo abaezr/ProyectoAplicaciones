@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class Resistencias extends javax.swing.JFrame {
 
-    Color Fondo = new Color(9,72,111);
+    Color Fondo = new Color(13, 114, 142);
     Color cafe = new Color (92,63,9);
     Color violeta = new Color (90,16,114);
     Color verde = new Color (21,98,8);
