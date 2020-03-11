@@ -50,6 +50,11 @@ public class InterfazGrafica extends javax.swing.JFrame {
         jLabel2.setText("(Click en la imagen de la actividad a realizar)");
 
         botonOrdenamiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BotonOrden.png"))); // NOI18N
+        botonOrdenamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonOrdenamientoActionPerformed(evt);
+            }
+        });
 
         botonAhorcado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ahorcado.png"))); // NOI18N
 
@@ -111,6 +116,12 @@ public class InterfazGrafica extends javax.swing.JFrame {
         Resistencias resist = new Resistencias();
         resist.setVisible(true);
     }//GEN-LAST:event_botonResistenciaActionPerformed
+
+    private void botonOrdenamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenamientoActionPerformed
+        // TODO add your handling code here:
+        ordenamiento orden = new ordenamiento();
+        orden.setVisible(true);
+    }//GEN-LAST:event_botonOrdenamientoActionPerformed
 
     /**
      * @param args the command line arguments
