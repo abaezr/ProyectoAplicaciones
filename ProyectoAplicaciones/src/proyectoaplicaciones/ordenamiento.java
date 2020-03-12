@@ -214,11 +214,13 @@ public class ordenamiento extends javax.swing.JFrame {
         int n = Integer.parseInt(txtN.getText());
         int[][] matriz = new int[3][n];
         tableMatriz(matriz, n);
+        botonIngresar.setEnabled(false);//False
 
     }//GEN-LAST:event_botonIngresarActionPerformed
 
     private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
         int Cant =Integer.parseInt(txtN.getText());
+        
         String [] VectorOrdenar= new String [Cant];
         int [] VectorOrdenarInt = new int [Cant];
         String [] VectorOrdenarString= new String [Cant];
@@ -227,31 +229,28 @@ public class ordenamiento extends javax.swing.JFrame {
         for(int i=0;i<num;i++){
             VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
         }
-        for(int i=0;i<num;i++){
-            VectorOrdenarInt[i]=Integer.parseInt(VectorOrdenar[i]);
+        for(int j=0;j<Cant;j++){
+            VectorOrdenarInt[j]=Integer.parseInt(VectorOrdenar[j]);
         }
         int menor;
            //ORDENAR DE MENOR A MAYOR
 
     for(int i = 0; i < num; i++){
-        menor = VectorOrdenarInt[0];
-
-        if (VectorOrdenarInt[i] < menor){
-            menor = VectorOrdenarInt[i];
-        }
-        else{
-            if (VectorOrdenarInt[i] > menor){
-              menor = menor;
-            }      
+        for (int j = i+1; j < num; j++) {
+            if(VectorOrdenarInt[i]>VectorOrdenarInt[j]){
+               int aux=VectorOrdenarInt[i];
+               VectorOrdenarInt[i]=VectorOrdenarInt[j];
+               VectorOrdenarInt[j]=aux;
+            }
         }
     }
     for (int i = 0; i < num; i++) {
-        VectorOrdenarString[i]=""+VectorOrdenarInt[i];
+        VectorOrdenarString[i]= ""+VectorOrdenarInt[i];
     }
     System.out.println(Arrays.toString(VectorOrdenarInt));
     DefaultTableModel model= (DefaultTableModel)tableMatriz1.getModel() ;
     model.addRow(VectorOrdenarString);
-           
+    botonOrdenar.setEnabled(false);
     }//GEN-LAST:event_botonOrdenarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -268,23 +267,22 @@ public class ordenamiento extends javax.swing.JFrame {
             VectorOrdenarInt[i]=Integer.parseInt(VectorOrdenar[i]);
         }
 
-               int aux;
-               for(int i = 0; i < num; i++){
-			for(int j=i+1; j < num; j++){
-				if(VectorOrdenarInt[i] < VectorOrdenarInt[j]){
-					aux = VectorOrdenarInt[i];
-					VectorOrdenarInt[i] = VectorOrdenarInt[j];
-					VectorOrdenarInt[j] = aux;
-				}
-			}
-		}
-            for (int i = 0; num < 10; i++) {
-                 VectorOrdenarString[i]=""+VectorOrdenarInt[i];
+    for(int i = 0; i < num; i++){
+        for (int j = i+1; j < num; j++) {
+            if(VectorOrdenarInt[i]<VectorOrdenarInt[j]){
+               int aux=VectorOrdenarInt[i];
+               VectorOrdenarInt[i]=VectorOrdenarInt[j];
+               VectorOrdenarInt[j]=aux;
             }
-             System.out.println(Arrays.toString(VectorOrdenarInt));
-            DefaultTableModel model= (DefaultTableModel)tableMatriz1.getModel() ;
-            model.addRow(VectorOrdenarString);   
-           
+        }
+    }
+    for (int i = 0; i < num; i++) {
+        VectorOrdenarString[i]= ""+VectorOrdenarInt[i];
+    }
+    System.out.println(Arrays.toString(VectorOrdenarInt));
+    DefaultTableModel model= (DefaultTableModel)tableMatriz1.getModel() ;
+    model.addRow(VectorOrdenarString);
+    jButton1.setEnabled(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
