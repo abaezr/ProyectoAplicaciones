@@ -120,18 +120,21 @@ public class InterfazGrafica extends javax.swing.JFrame {
         // TODO add your handling code here:
         Resistencias resist = new Resistencias();
         resist.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botonResistenciaActionPerformed
 
     private void botonOrdenamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenamientoActionPerformed
         // TODO add your handling code here:
         ordenamiento orden = new ordenamiento();
         orden.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botonOrdenamientoActionPerformed
 
     private void botonAhorcadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAhorcadoActionPerformed
         // TODO add your handling code here:
         Ahorcado ahorc = new Ahorcado();
         ahorc.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botonAhorcadoActionPerformed
 
     /**

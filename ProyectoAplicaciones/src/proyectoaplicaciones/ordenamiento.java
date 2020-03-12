@@ -46,6 +46,7 @@ public class ordenamiento extends javax.swing.JFrame {
         botonOrdenar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -126,6 +127,13 @@ public class ordenamiento extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(1).setResizable(false);
         }
 
+        jButton3.setText("Volver al menú principal");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,6 +167,9 @@ public class ordenamiento extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(botonbuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +195,8 @@ public class ordenamiento extends javax.swing.JFrame {
                     .addComponent(botonbuscar1))
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jButton3))
         );
 
         pack();
@@ -321,6 +333,13 @@ public class ordenamiento extends javax.swing.JFrame {
     botonOrdenar.setEnabled(false);
                    
     }//GEN-LAST:event_botonOrdenarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        InterfazGrafica interfaz = new InterfazGrafica();
+        this.setVisible(false);
+        interfaz.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
     }    
     /**
      * @param args the command line arguments
@@ -361,6 +380,7 @@ public class ordenamiento extends javax.swing.JFrame {
     private javax.swing.JButton botonIngresar;
     private javax.swing.JButton botonOrdenar;
     private javax.swing.JButton botonbuscar1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
