@@ -31,6 +31,7 @@ public class Resistencias extends javax.swing.JFrame {
         this.labelMultiplicador.setBackground(Color.white);
         this.labelTolerancia.setOpaque(true);
         this.labelTolerancia.setBackground(Color.white);      
+          this.setResizable(false);
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

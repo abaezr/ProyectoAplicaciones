@@ -22,6 +22,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
         this.getContentPane().setBackground(Fondo);
         this.setLocationRelativeTo(null);
         transparenciaBotones();
+        this.setResizable(false);
         
     }
 

@@ -23,6 +23,7 @@ public class ordenamiento extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Fondo);
+          this.setResizable(false);
     }
 
     /**

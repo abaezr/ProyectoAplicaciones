@@ -25,6 +25,7 @@ public class Ahorcado extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.getContentPane().setBackground(fondo);
+        this.setResizable(false);
     }
 
     /**
