@@ -7,6 +7,7 @@ package proyectoaplicaciones;
 
 import java.awt.Color;
 import java.util.Arrays;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -146,18 +147,17 @@ public class ordenamiento extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(6, 6, 6))
+                                .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(numeroabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonbuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(numeroabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonbuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -182,9 +182,9 @@ public class ordenamiento extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(numeroabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonbuscar1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
@@ -192,6 +192,9 @@ public class ordenamiento extends javax.swing.JFrame {
 
     private void botonbuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonbuscar1ActionPerformed
         // TODO add your handling code here:
+        if(numeroabuscar.getText().equals(""))
+            JOptionPane.showMessageDialog(null,"Ingrese una cantidad de Numeros");
+        else{
         int Cant =Integer.parseInt(txtN.getText());
         int num=tableMatriz1.getColumnCount();
         int num2=tableMatriz1.getRowCount();
@@ -240,7 +243,7 @@ public class ordenamiento extends javax.swing.JFrame {
             }
         }//ya los busca
     }//GEN-LAST:event_botonbuscar1ActionPerformed
-
+    }
     private void numeroabuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroabuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numeroabuscarActionPerformed
@@ -251,30 +254,33 @@ public class ordenamiento extends javax.swing.JFrame {
 
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
         // TODO add your handling code here:
+        if(txtN.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Ingrese una cantidad de Numeros");
+        }
+        else{
         int n = Integer.parseInt(txtN.getText());
         int[][] matriz = new int[3][n];
         tableMatriz(matriz, n);
         botonIngresar.setEnabled(false);//False
-
+        }
     }//GEN-LAST:event_botonIngresarActionPerformed
 
     private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
+        if(txtN.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Ingrese una cantidad de Numeros");
+        }
+        else{
         int Cant =Integer.parseInt(txtN.getText());
-        
         String [] VectorOrdenar= new String [Cant];
         int [] VectorOrdenarInt = new int [Cant];
         String [] VectorOrdenarString= new String [Cant];
         int num=tableMatriz1.getColumnCount();
-
-        for(int i=0;i<num;i++){
+        for(int i=0;i<num;i++)
             VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
-        }
-        for(int j=0;j<Cant;j++){
+        for(int j=0;j<Cant;j++)
             VectorOrdenarInt[j]=Integer.parseInt(VectorOrdenar[j]);
-        }
         int menor;
            //ORDENAR DE MENOR A MAYOR
-
     for(int i = 0; i < num; i++){
         for (int j = i+1; j < num; j++) {
             if(VectorOrdenarInt[i]>VectorOrdenarInt[j]){
@@ -306,14 +312,16 @@ public class ordenamiento extends javax.swing.JFrame {
             }
         }
     }
+    
     for (int i = 0; i < num; i++) {
         VectorOrdenarString[i]= ""+VectorOrdenarInt[i];
     }
     System.out.println(Arrays.toString(VectorOrdenarInt));
     model.addRow(VectorOrdenarString);
     botonOrdenar.setEnabled(false);
+                   
     }//GEN-LAST:event_botonOrdenarActionPerformed
-
+    }    
     /**
      * @param args the command line arguments
      */
