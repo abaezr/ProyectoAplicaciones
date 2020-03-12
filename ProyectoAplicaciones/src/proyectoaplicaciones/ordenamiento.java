@@ -195,21 +195,21 @@ public class ordenamiento extends javax.swing.JFrame {
         if(numeroabuscar.getText().equals(""))
             JOptionPane.showMessageDialog(null,"Ingrese una cantidad de Numeros");
         else{
-        int Cant =Integer.parseInt(txtN.getText());
+        int c =Integer.parseInt(txtN.getText());
         int num=tableMatriz1.getColumnCount();
         int num2=tableMatriz1.getRowCount();
-        String [] VectorOrdenar= new String [Cant];
-        int [] VectorOrdenarInt = new int [Cant];
+        String [] VecOrd= new String [c];
+        int [] VecOrdInt = new int [c];
         int cont=0;
-        String [] VectorOrdenarString= new String [Cant];
+        String [] VecOrdString= new String [c];
         int nume =Integer.parseInt(numeroabuscar.getText());
         
          for(int i=0;i<num;i++){
-            VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
+            VecOrd[i]=(String)tableMatriz1.getValueAt(0, i);
          }
-          for(int j=0;j<Cant;j++){
-            VectorOrdenarInt[j]=Integer.parseInt(VectorOrdenar[j]);
-            if (VectorOrdenarInt[j]==nume)
+          for(int j=0;j<c;j++){
+            VecOrdInt[j]=Integer.parseInt(VecOrd[j]);
+            if (VecOrdInt[j]==nume)
             {
                
                jTable1.setValueAt(j+1, 0, 0);
@@ -218,11 +218,11 @@ public class ordenamiento extends javax.swing.JFrame {
         }
           //
         for(int i=0;i<num;i++){
-            VectorOrdenar[i]=(String)tableMatriz1.getValueAt(1, i);
+            VecOrd[i]=(String)tableMatriz1.getValueAt(1, i);
          }
-          for(int j=0;j<Cant;j++){
-            VectorOrdenarInt[j]=Integer.parseInt(VectorOrdenar[j]);
-            if (VectorOrdenarInt[j]==nume)
+          for(int j=0;j<c;j++){
+            VecOrdInt[j]=Integer.parseInt(VecOrd[j]);
+            if (VecOrdInt[j]==nume)
             {
                
                jTable1.setValueAt(j+1, 1, 0);
@@ -231,11 +231,11 @@ public class ordenamiento extends javax.swing.JFrame {
         }    
         //
         for(int i=0;i<num;i++){
-            VectorOrdenar[i]=(String)tableMatriz1.getValueAt(2, i);
+            VecOrd[i]=(String)tableMatriz1.getValueAt(2, i);
          }
-          for(int j=0;j<Cant;j++){
-            VectorOrdenarInt[j]=Integer.parseInt(VectorOrdenar[j]);
-            if (VectorOrdenarInt[j]==nume)
+          for(int j=0;j<c;j++){
+            VecOrdInt[j]=Integer.parseInt(VecOrd[j]);
+            if (VecOrdInt[j]==nume)
             {
                
                jTable1.setValueAt(j+1, 2, 0);
@@ -270,54 +270,54 @@ public class ordenamiento extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Ingrese una cantidad de Numeros");
         }
         else{
-        int Cant =Integer.parseInt(txtN.getText());
-        String [] VectorOrdenar= new String [Cant];
-        int [] VectorOrdenarInt = new int [Cant];
-        String [] VectorOrdenarString= new String [Cant];
+        int c =Integer.parseInt(txtN.getText());
+        String [] VecOrd= new String [c];
+        int [] VecOrdInt = new int [c];
+        String [] VecOrdString= new String [c];
         int num=tableMatriz1.getColumnCount();
         for(int i=0;i<num;i++)
-            VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
-        for(int j=0;j<Cant;j++)
-            VectorOrdenarInt[j]=Integer.parseInt(VectorOrdenar[j]);
+            VecOrd[i]=(String)tableMatriz1.getValueAt(0, i);
+        for(int j=0;j<c;j++)
+            VecOrdInt[j]=Integer.parseInt(VecOrd[j]);
         int menor;
            //ORDENAR DE MENOR A MAYOR
     for(int i = 0; i < num; i++){
         for (int j = i+1; j < num; j++) {
-            if(VectorOrdenarInt[i]>VectorOrdenarInt[j]){
-               int aux=VectorOrdenarInt[i];
-               VectorOrdenarInt[i]=VectorOrdenarInt[j];
-               VectorOrdenarInt[j]=aux;
+            if(VecOrdInt[i]>VecOrdInt[j]){
+               int aux=VecOrdInt[i];
+               VecOrdInt[i]=VecOrdInt[j];
+               VecOrdInt[j]=aux;
             }
         }
     }
     for (int i = 0; i < num; i++) {
-        VectorOrdenarString[i]= ""+VectorOrdenarInt[i];
+        VecOrdString[i]= ""+VecOrdInt[i];
     }
-    System.out.println(Arrays.toString(VectorOrdenarInt));
+    System.out.println(Arrays.toString(VecOrdInt));
     DefaultTableModel model= (DefaultTableModel)tableMatriz1.getModel() ;
-    model.addRow(VectorOrdenarString);
+    model.addRow(VecOrdString);
     for(int i=0;i<num;i++){
-            VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
+            VecOrd[i]=(String)tableMatriz1.getValueAt(0, i);
         }
         for(int i=0;i<num;i++){
-            VectorOrdenarInt[i]=Integer.parseInt(VectorOrdenar[i]);
+            VecOrdInt[i]=Integer.parseInt(VecOrd[i]);
         }
 
     for(int i = 0; i < num; i++){
-        for (int j = i+1; j < num; j++) {
-            if(VectorOrdenarInt[i]<VectorOrdenarInt[j]){
-               int aux=VectorOrdenarInt[i];
-               VectorOrdenarInt[i]=VectorOrdenarInt[j];
-               VectorOrdenarInt[j]=aux;
+        for (int j = i+1; j < num; j++) {//save
+            if(VecOrdInt[i]<VecOrdInt[j]){
+               int aux=VecOrdInt[i];
+               VecOrdInt[i]=VecOrdInt[j];
+               VecOrdInt[j]=aux;
             }
         }
     }
     
     for (int i = 0; i < num; i++) {
-        VectorOrdenarString[i]= ""+VectorOrdenarInt[i];
+        VecOrdString[i]= ""+VecOrdInt[i];
     }
-    System.out.println(Arrays.toString(VectorOrdenarInt));
-    model.addRow(VectorOrdenarString);
+    System.out.println(Arrays.toString(VecOrdInt));
+    model.addRow(VecOrdString);
     botonOrdenar.setEnabled(false);
                    
     }//GEN-LAST:event_botonOrdenarActionPerformed
@@ -374,7 +374,7 @@ public class ordenamiento extends javax.swing.JFrame {
 
     private void tableMatriz(int[][] matriz, int n) {
         DefaultTableModel model = (DefaultTableModel) tableMatriz1.getModel();
-        model.setColumnCount(n);//Cantidad de Columnas    }
+        model.setColumnCount(n);//cidad de Columnas    }
         model.setRowCount(1);
 
 }
