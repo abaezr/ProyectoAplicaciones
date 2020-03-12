@@ -44,6 +44,7 @@ public class ordenamiento extends javax.swing.JFrame {
         botonOrdenar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -96,7 +97,7 @@ public class ordenamiento extends javax.swing.JFrame {
         ));
         jScrollPane4.setViewportView(tableMatriz1);
 
-        botonOrdenar.setText("Ordenar");
+        botonOrdenar.setText("Ordenar Ascendente");
         botonOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonOrdenarActionPerformed(evt);
@@ -123,6 +124,13 @@ public class ordenamiento extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTable1);
 
+        jButton1.setText("Ordenar Descendente");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,8 +145,10 @@ public class ordenamiento extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(botonOrdenar))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(botonOrdenar)
+                                    .addComponent(jButton1)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -167,12 +177,15 @@ public class ordenamiento extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonIngresar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
                         .addComponent(botonOrdenar)
-                        .addGap(32, 32, 32)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -201,17 +214,29 @@ public class ordenamiento extends javax.swing.JFrame {
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
         // TODO add your handling code here:
         int n = Integer.parseInt(txtN.getText());
-        int[][] matriz = new int[3][n];
+        int[][] matriz = new int[1][n];
         tableMatriz(matriz, n);
     }//GEN-LAST:event_botonIngresarActionPerformed
 
     private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
-        int n = tableMatriz1.getColumnCount();
-        int vector[] = new int[n];
-        for(int i=0;i<n;i++){
+        int Cant =Integer.parseInt(txtN.getText());
+        String [] VectorOrdenar= new String [Cant];
+        int [] VectorOrdenarInt = new int [Cant];
+        String [] VectorOrdenarString= new String [Cant];
+        int num=tableMatriz1.getColumnCount();
 
+        for(int i=0;i<num;i++){
+            VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
         }
+        for(int i=0;i<num;i++){
+            VectorOrdenarInt[i]=Integer.parseInt(VectorOrdenar[i]);
+        }
+        
     }//GEN-LAST:event_botonOrdenarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +277,7 @@ public class ordenamiento extends javax.swing.JFrame {
     private javax.swing.JButton botonIngresar;
     private javax.swing.JButton botonOrdenar;
     private javax.swing.JButton botonbuscar1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -264,7 +290,7 @@ public class ordenamiento extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 private void tableMatriz(int[][] matriz, int n) {
 DefaultTableModel model = (DefaultTableModel) tableMatriz1.getModel();
-         model.setRowCount(3);//Cantidad de Filas
+         model.setRowCount(1);//Cantidad de Filas
          model.setColumnCount(n);//Cantidad de Columnas    }
 
 }
