@@ -97,12 +97,8 @@
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="75" max="-2" attributes="0"/>
-<<<<<<< Updated upstream
               <EmptySpace pref="20" max="32767" attributes="0"/>
               <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-=======
-              <EmptySpace pref="43" max="32767" attributes="0"/>
->>>>>>> Stashed changes
           </Group>
       </Group>
     </DimensionLayout>
@@ -231,7 +227,6 @@
         </Component>
       </SubComponents>
     </Container>
-<<<<<<< Updated upstream
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Volver al men&#xfa; principal"/>
@@ -240,7 +235,5 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
       </Events>
     </Component>
-=======
->>>>>>> Stashed changes
   </SubComponents>
 </Form>
