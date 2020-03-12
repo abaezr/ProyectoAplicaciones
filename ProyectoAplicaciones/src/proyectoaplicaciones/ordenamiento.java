@@ -6,6 +6,7 @@
 package proyectoaplicaciones;
 
 import java.awt.Color;
+import java.util.Arrays;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -213,12 +214,17 @@ public class ordenamiento extends javax.swing.JFrame {
 
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
         // TODO add your handling code here:
+        
+        
         int n = Integer.parseInt(txtN.getText());
+        Integer[] data={0};
+        
         int[][] matriz = new int[1][n];
         tableMatriz(matriz, n);
+        
+        
     }//GEN-LAST:event_botonIngresarActionPerformed
-
-    private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
+private void Ordenar(int TOrden) {                                             
         int Cant =Integer.parseInt(txtN.getText());
         String [] VectorOrdenar= new String [Cant];
         int [] VectorOrdenarInt = new int [Cant];
@@ -231,6 +237,30 @@ public class ordenamiento extends javax.swing.JFrame {
         for(int i=0;i<num;i++){
             VectorOrdenarInt[i]=Integer.parseInt(VectorOrdenar[i]);
         }
+        int menor;
+           //ORDENAR DE MENOR A MAYOR
+    for(int i = 0; i < num; i++){
+        menor = VectorOrdenarInt[0];
+
+        if (VectorOrdenarInt[i] < menor){
+            menor = VectorOrdenarInt[i];
+        }
+        else{
+            if (VectorOrdenarInt[i] > menor){
+              menor = menor;
+            }      
+        }
+    }
+    for (int i = 0; num < 10; i++) {
+        VectorOrdenarString[i]=""+VectorOrdenarInt[i];
+    }
+    System.out.println(Arrays.toString(VectorOrdenarInt));
+    DefaultTableModel model= (DefaultTableModel)tableMatriz1.getModel() ;
+    model.addRow(VectorOrdenarString);
+}
+    
+    private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
+        
         
     }//GEN-LAST:event_botonOrdenarActionPerformed
 
@@ -288,10 +318,9 @@ public class ordenamiento extends javax.swing.JFrame {
     private javax.swing.JTable tableMatriz1;
     private javax.swing.JTextField txtN;
     // End of variables declaration//GEN-END:variables
-private void tableMatriz(int[][] matriz, int n) {
-DefaultTableModel model = (DefaultTableModel) tableMatriz1.getModel();
-         model.setRowCount(1);//Cantidad de Filas
-         model.setColumnCount(n);//Cantidad de Columnas    }
 
-}
+    private void tableMatriz(int[][] matriz, int n) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
