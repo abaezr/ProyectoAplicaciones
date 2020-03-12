@@ -14,10 +14,6 @@ import static java.lang.Math.pow;
 public class CalculoResistencia {
     public double calculoValorResistencia(double banda1, double banda2, double multiplicador){
         double valor;
-        if(multiplicador == pow(10,10.0))
-            multiplicador = 0.1;
-        if(multiplicador == pow(10,11))
-            multiplicador = 0.01;
         valor = (banda1*10+banda2)*multiplicador;
         return valor;
     }
