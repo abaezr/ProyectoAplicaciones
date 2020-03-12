@@ -87,10 +87,7 @@ public class ordenamiento extends javax.swing.JFrame {
 
         tableMatriz1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+
             },
             new String [] {
 
@@ -214,17 +211,13 @@ public class ordenamiento extends javax.swing.JFrame {
 
     private void botonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarActionPerformed
         // TODO add your handling code here:
-        
-        
         int n = Integer.parseInt(txtN.getText());
-        Integer[] data={0};
-        
-        int[][] matriz = new int[1][n];
+        int[][] matriz = new int[3][n];
         tableMatriz(matriz, n);
-        
-        
+
     }//GEN-LAST:event_botonIngresarActionPerformed
-private void Ordenar(int TOrden) {                                             
+
+    private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
         int Cant =Integer.parseInt(txtN.getText());
         String [] VectorOrdenar= new String [Cant];
         int [] VectorOrdenarInt = new int [Cant];
@@ -239,6 +232,7 @@ private void Ordenar(int TOrden) {
         }
         int menor;
            //ORDENAR DE MENOR A MAYOR
+
     for(int i = 0; i < num; i++){
         menor = VectorOrdenarInt[0];
 
@@ -251,21 +245,46 @@ private void Ordenar(int TOrden) {
             }      
         }
     }
-    for (int i = 0; num < 10; i++) {
+    for (int i = 0; i < num; i++) {
         VectorOrdenarString[i]=""+VectorOrdenarInt[i];
     }
     System.out.println(Arrays.toString(VectorOrdenarInt));
     DefaultTableModel model= (DefaultTableModel)tableMatriz1.getModel() ;
     model.addRow(VectorOrdenarString);
-}
-    
-    private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrdenarActionPerformed
-        
-        
+           
     }//GEN-LAST:event_botonOrdenarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         int Cant =Integer.parseInt(txtN.getText());
+        String [] VectorOrdenar= new String [Cant];
+        int [] VectorOrdenarInt = new int [Cant];
+        String [] VectorOrdenarString= new String [Cant];
+        int num=tableMatriz1.getColumnCount();
+
+        for(int i=0;i<num;i++){
+            VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
+        }
+        for(int i=0;i<num;i++){
+            VectorOrdenarInt[i]=Integer.parseInt(VectorOrdenar[i]);
+        }
+
+               int aux;
+               for(int i = 0; i < num; i++){
+			for(int j=i+1; j < num; j++){
+				if(VectorOrdenarInt[i] < VectorOrdenarInt[j]){
+					aux = VectorOrdenarInt[i];
+					VectorOrdenarInt[i] = VectorOrdenarInt[j];
+					VectorOrdenarInt[j] = aux;
+				}
+			}
+		}
+            for (int i = 0; num < 10; i++) {
+                 VectorOrdenarString[i]=""+VectorOrdenarInt[i];
+            }
+             System.out.println(Arrays.toString(VectorOrdenarInt));
+            DefaultTableModel model= (DefaultTableModel)tableMatriz1.getModel() ;
+            model.addRow(VectorOrdenarString);   
+           
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -320,7 +339,11 @@ private void Ordenar(int TOrden) {
     // End of variables declaration//GEN-END:variables
 
     private void tableMatriz(int[][] matriz, int n) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        DefaultTableModel model = (DefaultTableModel) tableMatriz1.getModel();
+        model.setColumnCount(n);//Cantidad de Columnas    }
+        model.setRowCount(1);
 
 }
+}
+
+
