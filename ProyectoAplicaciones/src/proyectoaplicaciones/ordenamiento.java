@@ -46,7 +46,10 @@ public class ordenamiento extends javax.swing.JFrame {
         botonOrdenar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+<<<<<<< Updated upstream
         jButton3 = new javax.swing.JButton();
+=======
+>>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -126,6 +129,7 @@ public class ordenamiento extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
         }
+<<<<<<< Updated upstream
 
         jButton3.setText("Volver al menú principal");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +137,8 @@ public class ordenamiento extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
+=======
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,8 +201,12 @@ public class ordenamiento extends javax.swing.JFrame {
                     .addComponent(botonbuscar1))
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< Updated upstream
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jButton3))
+=======
+                .addContainerGap(43, Short.MAX_VALUE))
+>>>>>>> Stashed changes
         );
 
         pack();
