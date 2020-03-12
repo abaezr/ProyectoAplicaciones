@@ -19,10 +19,12 @@ public class ordenamiento extends javax.swing.JFrame {
     /**
      * Creates new form ordenamiento
      */
+    public int vector[];
     public ordenamiento() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Fondo);
+        
     }
 
     /**
@@ -46,6 +48,18 @@ public class ordenamiento extends javax.swing.JFrame {
         botonOrdenar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+        jButton1 = new javax.swing.JButton();
+=======
+<<<<<<< HEAD
+        jLabel4 = new javax.swing.JLabel();
+=======
+        jButton1 = new javax.swing.JButton();
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> master
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -121,10 +135,30 @@ public class ordenamiento extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(jTable1);
+<<<<<<< HEAD
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
         }
+=======
+
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        jLabel4.setText("jLabel4");
+=======
+>>>>>>> Stashed changes
+        jButton1.setText("Ordenar Descendente");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+<<<<<<< Updated upstream
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> master
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,6 +184,7 @@ public class ordenamiento extends javax.swing.JFrame {
                                 .addComponent(botonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
+<<<<<<< HEAD
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -158,6 +193,18 @@ public class ordenamiento extends javax.swing.JFrame {
                                 .addComponent(numeroabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(botonbuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+=======
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(numeroabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonbuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+>>>>>>> master
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -176,7 +223,33 @@ public class ordenamiento extends javax.swing.JFrame {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
+<<<<<<< HEAD
                         .addComponent(botonOrdenar)))
+=======
+                        .addComponent(botonOrdenar)
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                        .addGap(32, 32, 32)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(numeroabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonbuscar1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))))
+=======
+>>>>>>> Stashed changes
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
+>>>>>>> master
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -184,7 +257,12 @@ public class ordenamiento extends javax.swing.JFrame {
                     .addComponent(botonbuscar1))
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(43, Short.MAX_VALUE))
+=======
+                .addGap(31, 31, 31))
+>>>>>>> master
+>>>>>>> master
         );
 
         pack();
@@ -275,19 +353,43 @@ public class ordenamiento extends javax.swing.JFrame {
         int [] VectorOrdenarInt = new int [Cant];
         String [] VectorOrdenarString= new String [Cant];
         int num=tableMatriz1.getColumnCount();
+<<<<<<< HEAD
         for(int i=0;i<num;i++)
+=======
+
+
+    private void botonOrdenarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        
+        int n = tableMatriz1.getColumnCount();
+        for(int i=0;i<n;i++){
+
+        for(int i=0;i<num;i++){
+>>>>>>> master
             VectorOrdenar[i]=(String)tableMatriz1.getValueAt(0, i);
         for(int j=0;j<Cant;j++)
             VectorOrdenarInt[j]=Integer.parseInt(VectorOrdenar[j]);
         int menor;
            //ORDENAR DE MENOR A MAYOR
     for(int i = 0; i < num; i++){
+<<<<<<< HEAD
         for (int j = i+1; j < num; j++) {
             if(VectorOrdenarInt[i]>VectorOrdenarInt[j]){
                int aux=VectorOrdenarInt[i];
                VectorOrdenarInt[i]=VectorOrdenarInt[j];
                VectorOrdenarInt[j]=aux;
             }
+=======
+        menor = VectorOrdenarInt[0];
+
+        if (VectorOrdenarInt[i] < menor){
+            menor = VectorOrdenarInt[i];
+        }
+        else{
+            if (VectorOrdenarInt[i] > menor){
+              menor = menor;
+            }      
+
+>>>>>>> master
         }
     }
     for (int i = 0; i < num; i++) {
@@ -364,6 +466,7 @@ public class ordenamiento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
