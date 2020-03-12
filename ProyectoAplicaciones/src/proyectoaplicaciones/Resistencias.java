@@ -72,7 +72,7 @@ public class Resistencias extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Parte5Resistencia.png"))); // NOI18N
 
-        jComboBoxBanda1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banda No.1", "Café", "Rojo", "Naranja", "Amarillo", "Verde", "Azul", "Violeta", "Gris", "Blanco" }));
+        jComboBoxBanda1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banda No.1", "Negro", "Café", "Rojo", "Naranja", "Amarillo", "Verde", "Azul", "Violeta", "Gris", "Blanco" }));
         jComboBoxBanda1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxBanda1ActionPerformed(evt);
@@ -86,7 +86,7 @@ public class Resistencias extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxMultiplicador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multiplicador", "Negro", "Café", "Rojo", "Naranja", "Amarillo", "Verde", "Azul", "Violeta", "Gris", "Blanco", " ", " " }));
+        jComboBoxMultiplicador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multiplicador", "Negro", "Café", "Rojo", "Naranja", "Amarillo", "Verde", "Azul", "Violeta", "Gris", "Blanco", "Dorado", "Plata", " " }));
         jComboBoxMultiplicador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxMultiplicadorActionPerformed(evt);
@@ -222,22 +222,24 @@ public class Resistencias extends javax.swing.JFrame {
         if(jComboBoxBanda1.getSelectedIndex()==0)
             this.labelBanda1.setBackground(Color.white);
         if(jComboBoxBanda1.getSelectedIndex()==1)
-            this.labelBanda1.setBackground(cafe);
+            this.labelBanda1.setBackground(Color.black);
         if(jComboBoxBanda1.getSelectedIndex()==2)
-            this.labelBanda1.setBackground(Color.red);
+            this.labelBanda1.setBackground(cafe);
         if(jComboBoxBanda1.getSelectedIndex()==3)
-            this.labelBanda1.setBackground(naranja);
+            this.labelBanda1.setBackground(Color.red);
         if(jComboBoxBanda1.getSelectedIndex()==4)
-            this.labelBanda1.setBackground(Color.yellow);
+            this.labelBanda1.setBackground(naranja);
         if(jComboBoxBanda1.getSelectedIndex()==5)
-            this.labelBanda1.setBackground(verde);
+            this.labelBanda1.setBackground(Color.yellow);
         if(jComboBoxBanda1.getSelectedIndex()==6)
-            this.labelBanda1.setBackground(Color.blue);
+            this.labelBanda1.setBackground(verde);
         if(jComboBoxBanda1.getSelectedIndex()==7)
-            this.labelBanda1.setBackground(violeta);
+            this.labelBanda1.setBackground(Color.blue);
         if(jComboBoxBanda1.getSelectedIndex()==8)
-            this.labelBanda1.setBackground(Color.gray);
+            this.labelBanda1.setBackground(violeta);
         if(jComboBoxBanda1.getSelectedIndex()==9)
+            this.labelBanda1.setBackground(Color.gray);
+        if(jComboBoxBanda1.getSelectedIndex()==10)
             this.labelBanda1.setBackground(Color.white);
         
         
@@ -319,25 +321,25 @@ public class Resistencias extends javax.swing.JFrame {
         if(jComboBoxBanda1.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(null,"Ingrese un color en la Banda No.1");
             this.labelValor.setText("");
-            this.labelValorTolerancia.setText("");
+            this.labelTolerancia.setText("");
         }
         if(jComboBoxBanda2.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(null,"Ingrese un color en la Banda No.2");
             this.labelValor.setText("");
-            this.labelValorTolerancia.setText("");
+            this.labelTolerancia.setText("");
         }
         if(jComboBoxMultiplicador.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(null,"Ingrese un color en el Multiplicador");
             this.labelValor.setText("");
-            this.labelValorTolerancia.setText("");
+            this.labelTolerancia.setText("");
         }
         if(jComboBoxTolerancia.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(null,"Ingrese un color en la Tolerancia");
             this.labelValor.setText("");
-            this.labelValorTolerancia.setText("");
+            this.labelTolerancia.setText("");
         }
         else{
-            double banda1 = jComboBoxBanda1.getSelectedIndex();
+            double banda1 = jComboBoxBanda1.getSelectedIndex()-1;
             double banda2 = jComboBoxBanda2.getSelectedIndex()-1;
             double Multiplicador = pow(10,jComboBoxMultiplicador.getSelectedIndex()-1);
             double Tolerancia = jComboBoxTolerancia.getSelectedIndex();
