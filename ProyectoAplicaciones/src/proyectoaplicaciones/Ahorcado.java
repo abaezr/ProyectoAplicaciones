@@ -5,6 +5,7 @@
  */
 package proyectoaplicaciones;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,12 +19,12 @@ public class Ahorcado extends javax.swing.JFrame {
    public int vidasRestantes=9;
    public int contadorBoton1=0; 
    public String  palabraADescubrir;
-   
+   Color fondo = new Color(99, 100, 104);
         
     public Ahorcado() {
         initComponents();
         setLocationRelativeTo(null);
-        
+        this.getContentPane().setBackground(fondo);
     }
 
     /**
@@ -61,7 +62,7 @@ public class Ahorcado extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

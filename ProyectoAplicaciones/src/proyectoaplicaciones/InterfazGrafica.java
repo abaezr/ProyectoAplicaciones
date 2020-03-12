@@ -57,6 +57,11 @@ public class InterfazGrafica extends javax.swing.JFrame {
         });
 
         botonAhorcado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Ahorcado.png"))); // NOI18N
+        botonAhorcado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAhorcadoActionPerformed(evt);
+            }
+        });
 
         botonResistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/resistor (1).png"))); // NOI18N
         botonResistencia.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +127,12 @@ public class InterfazGrafica extends javax.swing.JFrame {
         ordenamiento orden = new ordenamiento();
         orden.setVisible(true);
     }//GEN-LAST:event_botonOrdenamientoActionPerformed
+
+    private void botonAhorcadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAhorcadoActionPerformed
+        // TODO add your handling code here:
+        Ahorcado ahorc = new Ahorcado();
+        ahorc.setVisible(true);
+    }//GEN-LAST:event_botonAhorcadoActionPerformed
 
     /**
      * @param args the command line arguments
